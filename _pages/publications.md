@@ -2,15 +2,16 @@
 layout: archive
 title: "Publications"
 permalink: /publications/
-author_profile: true
+author_profile: false
 ---
 
-{% if author.googlescholar %}
-  You can also find my articles on <u><a href="{{author.googlescholar}}">my Google Scholar profile</a>.</u>
-{% endif %}
+This page lists selected publications and ongoing research outputs.
+
+For the most up-to-date record, see <a href="https://scholar.google.com/citations?user=xUIPO3gAAAAJ&hl=en" target="_blank" rel="noopener noreferrer">my Google Scholar profile</a>.
 
 {% include base_path %}
 
-{% for post in site.publications reversed %}
+{% assign pubs = site.publications | sort: 'date' | reverse %}
+{% for post in pubs %}
   {% include archive-single.html %}
 {% endfor %}

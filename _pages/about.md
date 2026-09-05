@@ -1,14 +1,20 @@
 ---
-permalink: /
-title: "About me"
-excerpt: "About me"
+layout: single
+title: "About"
+permalink: /about/
 author_profile: true
-redirect_from: 
-  - /about/
-  - /about.html
 ---
 
-I am Samuel, a Software Engineering PhD student under Dr Emad Shihab's supervision at Concordia University. I had my master's and bachelor's degrees from the University of Ghana and the University of Cape Coast respectively. I previously worked as a software engineer, where I was involved in planning, designing, developing and deploying software products. My research interests are in LM4SE, mining software repositories, software engineering for AI systems and explainable AI models for software engineering.
+I am Samuel Abedu, a Software Engineering PhD student at Concordia University supervised by Dr. Emad Shihab.
 
-======
-Page is under constuction.
+My academic path includes:
+- MSc, University of Ghana
+- BSc, University of Cape Coast
+
+Before starting my PhD, I worked as a software engineer on end-to-end product delivery, including planning, architecture, implementation, and deployment.
+
+My research interests center on:
+- Large language models for software engineering
+- Mining software repositories
+- Software engineering for AI systems
+- Explainable and fair AI for software engineering

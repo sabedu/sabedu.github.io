@@ -2,58 +2,34 @@
 layout: archive
 title: "CV"
 permalink: /cv/
-author_profile: true
+author_profile: false
 redirect_from:
   - /resume
 ---
 
-{% include base_path %}
+## Education
 
-Education
-======
-* B.S. in GitHub, GitHub University, 2012
-* M.S. in Jekyll, GitHub University, 2014
-* Ph.D in Version Control Theory, GitHub University, 2018 (expected)
+- **PhD in Software Engineering (ongoing)**, Concordia University
+- **MSc**, University of Ghana
+- **BSc**, University of Cape Coast
 
-Work experience
-======
-* Summer 2015: Research Assistant
-  * Github University
-  * Duties included: Tagging issues
-  * Supervisor: Professor Git
+## Research Interests
 
-* Fall 2015: Research Assistant
-  * Github University
-  * Duties included: Merging pull requests
-  * Supervisor: Professor Hub
-  
-Skills
-======
-* Skill 1
-* Skill 2
-  * Sub-skill 2.1
-  * Sub-skill 2.2
-  * Sub-skill 2.3
-* Skill 3
+- Large language models for software engineering
+- Mining software repositories
+- Software engineering for AI systems
+- Explainable and fair AI
 
-Publications
-======
-  <ul>{% for post in site.publications %}
-    {% include archive-single-cv.html %}
-  {% endfor %}</ul>
-  
-Talks
-======
-  <ul>{% for post in site.talks %}
-    {% include archive-single-talk-cv.html %}
-  {% endfor %}</ul>
-  
-Teaching
-======
-  <ul>{% for post in site.teaching %}
-    {% include archive-single-cv.html %}
-  {% endfor %}</ul>
-  
-Service and leadership
-======
-* Currently signed in to 43 different slack teams
+## Publications
+
+<ul>
+{% assign pubs = site.publications | sort: 'date' | reverse %}
+{% for post in pubs %}
+  {% include archive-single-cv.html %}
+{% endfor %}
+</ul>
+
+## Profiles
+
+- [Google Scholar](https://scholar.google.com/citations?user=xUIPO3gAAAAJ&hl=en)
+- [GitHub](https://github.com/sabedu)
