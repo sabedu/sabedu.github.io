@@ -57,9 +57,13 @@ export const site = {
       href: "https://scholar.google.com/citations?user=xUIPO3gAAAAJ&hl=en",
     },
     { label: "GitHub", href: "https://github.com/sabedu" },
+    {
+      label: "LinkedIn",
+      href: "https://www.linkedin.com/in/samuel-abedu/",
+    },
     { label: "DAS Lab", href: "https://das.encs.concordia.ca/members/samuel-abedu" },
     { label: "ORCID", href: "https://orcid.org/0009-0000-0472-4514" },
-    { label: "X", href: "https://x.com/samwisegh" },
+    { label: "X", href: "https://x.com/s_abedu" },
   ] satisfies SocialLink[],
   scholar: {
     citations: 98,
