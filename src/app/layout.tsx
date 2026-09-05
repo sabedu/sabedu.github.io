@@ -24,6 +24,10 @@ export const metadata: Metadata = {
   description:
     "PhD student in Software Engineering at Concordia University. Research on LLMs, mining software repositories, and reliable AI systems.",
   metadataBase: new URL("https://sabedu.github.io"),
+  icons: {
+    icon: [{ url: "/icon.png", sizes: "32x32", type: "image/png" }],
+    apple: [{ url: "/apple-icon.png", sizes: "180x180", type: "image/png" }],
+  },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

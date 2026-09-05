@@ -13,17 +13,17 @@ export default function Home() {
     <>
       <section className="border-b border-border bg-surface">
         <Container className="py-20 sm:py-28">
-          <div className="flex flex-col gap-10 sm:flex-row sm:items-center">
+          <div className="flex flex-col items-center gap-10 sm:flex-row sm:items-start sm:gap-12">
             <Image
               src={site.profileImage}
               alt={site.name}
-              width={128}
-              height={128}
-              className="h-32 w-32 shrink-0 rounded-2xl border border-border object-cover shadow-sm"
+              width={192}
+              height={192}
+              className="h-44 w-44 shrink-0 rounded-2xl border border-border object-cover object-top shadow-sm sm:h-48 sm:w-48"
               priority
             />
 
-            <div>
+            <div className="text-center sm:text-left">
               <p className="mb-4 text-sm font-medium uppercase tracking-[0.2em] text-accent">
                 {site.role}
               </p>
@@ -34,7 +34,7 @@ export default function Home() {
                 I study large language models for software engineering, mining
                 software repositories, and building reliable AI-enabled systems.
               </p>
-              <div className="mt-10 flex flex-wrap gap-4">
+              <div className="mt-10 flex flex-wrap justify-center gap-4 sm:justify-start">
                 <Link
                   href="/about/"
                   className="inline-flex items-center rounded-full bg-accent px-5 py-2.5 text-sm font-medium text-white transition-colors hover:bg-[#7c2d12]"
