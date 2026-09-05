@@ -222,7 +222,7 @@ export const site = {
         { name: "E. Akuafum" },
       ],
       venue:
-        "Proceedings of the International Conference on Software Engineering and Information Systems",
+        "Proceedings of the International Conference on Software Engineering and Knowledge Engineering (SEKE)",
       year: 2023,
       type: "conference",
       href: "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=xUIPO3gAAAAJ&citation_for_view=xUIPO3gAAAAJ:2osOgNQ5qMEC",
