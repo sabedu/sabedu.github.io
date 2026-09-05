@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { AuthorList } from "@/components/author-list";
 import { Container } from "@/components/container";
+import { PublicationLinks } from "@/components/publication-links";
 import { PublicationTypeBadge } from "@/components/publication-type-badge";
 import { site } from "@/lib/site";
 
@@ -30,24 +30,15 @@ export default function PublicationsPage() {
               <PublicationTypeBadge type={pub.type} />
             </div>
 
-            {pub.href ? (
-              <Link
-                href={pub.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="font-display mt-2 block text-xl leading-snug text-stone-900 hover:text-accent"
-              >
-                {pub.title}
-              </Link>
-            ) : (
-              <h2 className="font-display mt-2 text-xl leading-snug text-stone-900">
-                {pub.title}
-              </h2>
-            )}
+            <h2 className="font-display mt-2 text-xl leading-snug text-stone-900">
+              {pub.title}
+            </h2>
 
             <AuthorList authors={pub.authors} />
 
             <p className="mt-2 text-sm italic text-muted">{pub.venue}</p>
+
+            <PublicationLinks links={pub.links} />
           </li>
         ))}
       </ul>

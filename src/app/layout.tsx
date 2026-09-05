@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     template: "%s · Samuel Abedu",
   },
   description:
-    "PhD student in Software Engineering at Concordia University. Research on LLMs, mining software repositories, and reliable AI systems.",
+    "PhD Candidate and software engineer building reliable AI systems for developers. Research on LLMs, mining software repositories, and software engineering for AI systems.",
   metadataBase: new URL("https://sabedu.github.io"),
   icons: {
     icon: [{ url: "/icon.png", sizes: "32x32", type: "image/png" }],

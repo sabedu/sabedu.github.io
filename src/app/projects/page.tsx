@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import { ProjectCard } from "@/components/project-card";
 import { Container } from "@/components/container";
 import { site } from "@/lib/site";
 
@@ -13,36 +13,16 @@ export default function ProjectsPage() {
       <p className="text-sm font-medium uppercase tracking-[0.2em] text-accent">
         Projects
       </p>
+      <p className="mt-4 max-w-2xl text-muted">
+        Systems I have built and deployed in research and industry — from
+        pharmaceutical chatbots to open-source developer tools.
+      </p>
 
-      <ul className="mt-10 space-y-8">
+      <div className="mt-10 space-y-8">
         {site.projects.map((project) => (
-          <li
-            key={project.href}
-            className="rounded-2xl border border-border bg-surface p-8"
-          >
-            <div className="flex flex-wrap items-center gap-2 text-sm text-muted">
-              {project.year ? <span>{project.year}</span> : null}
-            </div>
-            <Link
-              href={project.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="font-display mt-2 block text-xl leading-snug text-stone-900 hover:text-accent"
-            >
-              {project.title}
-            </Link>
-            <p className="mt-3 text-muted">{project.description}</p>
-            <Link
-              href={project.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-4 inline-block text-sm text-accent hover:underline"
-            >
-              thedrug.guru →
-            </Link>
-          </li>
+          <ProjectCard key={project.title} project={project} />
         ))}
-      </ul>
+      </div>
     </Container>
   );
 }
