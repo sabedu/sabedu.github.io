@@ -22,6 +22,13 @@ export type Publication = {
   href?: string;
 };
 
+export type Project = {
+  title: string;
+  description: string;
+  href: string;
+  year?: number;
+};
+
 export const site = {
   name: "Samuel Abedu",
   title: "Samuel Abedu",
@@ -70,7 +77,7 @@ export const site = {
       "I am a Software Engineering PhD student under Dr. Emad Shihab's supervision at Concordia University, working in the Data-driven Analysis of Software (DAS) Lab.",
     education: [
       "PhD in Software Engineering (ongoing), Concordia University",
-      "MSc, University of Ghana",
+      "MPhil, University of Ghana",
       "BSc, University of Cape Coast",
     ],
     background:
@@ -236,11 +243,20 @@ export const site = {
       title:
         "Machine Learning Algorithms on Small-Sized Datasets in Software Effort Estimation: A Comparative Study",
       authors: [{ name: "S. Abedu", self: true }],
-      venue: "MSc Thesis, University of Ghana",
+      venue: "MPhil Thesis, University of Ghana",
       year: 2021,
       type: "thesis",
     },
   ] as Publication[],
+  projects: [
+    {
+      title: "Drug Information Chatbot",
+      description:
+        "An AI-powered chatbot for drug and pharmaceutical information, built for real-world use in the pharmaceutical industry.",
+      href: "https://thedrug.guru",
+      year: 2025,
+    },
+  ] as Project[],
   cvUrl: "/files/cv.pdf",
 } as const;
 
@@ -250,4 +266,12 @@ export const publicationTypeLabels: Record<Publication["type"], string> = {
   workshop: "Workshop",
   preprint: "Preprint",
   thesis: "Thesis",
+};
+
+export const publicationTypeStyles: Record<Publication["type"], string> = {
+  journal: "bg-indigo-100 text-indigo-800",
+  conference: "bg-emerald-100 text-emerald-800",
+  workshop: "bg-violet-100 text-violet-800",
+  preprint: "bg-amber-100 text-amber-900",
+  thesis: "bg-slate-200 text-slate-700",
 };
