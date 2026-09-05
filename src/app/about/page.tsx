@@ -17,7 +17,7 @@ export default function AboutPage() {
           alt={site.name}
           width={160}
           height={160}
-          className="h-40 w-40 shrink-0 rounded-2xl border border-border object-cover shadow-sm"
+          className="h-40 w-40 shrink-0 rounded-2xl border border-border object-cover object-top shadow-sm"
           priority
         />
 
@@ -48,6 +48,20 @@ export default function AboutPage() {
       </div>
 
       <section className="mt-14">
+        <h2 className="font-display text-2xl text-stone-900">Current roles</h2>
+        <ul className="mt-4 space-y-3 text-muted">
+          {site.currentRoles.map((role) => (
+            <li key={`${role.title}-${role.organization}`}>
+              <span className="font-medium text-stone-900">{role.title}</span>
+              {", "}
+              {role.organization}
+              {role.period ? ` · ${role.period}` : null}
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <section className="mt-14">
         <h2 className="font-display text-2xl text-stone-900">Education</h2>
         <ul className="mt-4 space-y-2 text-muted">
           {site.bio.education.map((item) => (
@@ -72,6 +86,15 @@ export default function AboutPage() {
         <ul className="mt-4 space-y-2 text-muted">
           {site.awards.map((award) => (
             <li key={award}>{award}</li>
+          ))}
+        </ul>
+      </section>
+
+      <section className="mt-14">
+        <h2 className="font-display text-2xl text-stone-900">Service</h2>
+        <ul className="mt-4 space-y-2 text-muted">
+          {site.service.map((item) => (
+            <li key={item}>{item}</li>
           ))}
         </ul>
       </section>

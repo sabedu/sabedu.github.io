@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { AuthorList } from "@/components/author-list";
 import { Container } from "@/components/container";
+import { PublicationLinks } from "@/components/publication-links";
 import { publicationTypeLabels, site } from "@/lib/site";
 
 export default function Home() {
@@ -31,8 +32,7 @@ export default function Home() {
                 {site.tagline}
               </h1>
               <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted">
-                I study large language models for software engineering, mining
-                software repositories, and building reliable AI-enabled systems.
+                {site.lead}
               </p>
               <div className="mt-10 flex flex-wrap justify-center gap-4 sm:justify-start">
                 <Link
@@ -66,37 +66,30 @@ export default function Home() {
           <div className="grid gap-8 sm:grid-cols-2">
             <article className="rounded-2xl border border-border bg-surface p-8">
               <h2 className="font-display text-xl text-stone-900">
-                Research areas
+                Researcher-engineer
               </h2>
-              <ul className="mt-4 space-y-2 text-muted">
-                {site.researchAreas.map((area) => (
-                  <li key={area} className="leading-relaxed">
-                    {area}
-                  </li>
-                ))}
-              </ul>
+              <div className="prose-custom mt-4">
+                <p>
+                  I publish software-engineering research and build AI systems
+                  in production settings — including work at Hubtel, Sandoz, and
+                  the National Bank of Canada.
+                </p>
+              </div>
             </article>
 
             <article className="rounded-2xl border border-border bg-surface p-8">
               <h2 className="font-display text-xl text-stone-900">
-                DAS Lab
+                Current roles
               </h2>
-              <div className="prose-custom mt-4">
-                <p>
-                  I work in the Data-driven Analysis of Software (DAS) Lab at
-                  Concordia University, supervised by Dr. Emad Shihab.
-                </p>
-                <p>
-                  <Link
-                    href={site.lab.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-accent hover:underline"
-                  >
-                    View lab profile →
-                  </Link>
-                </p>
-              </div>
+              <ul className="mt-4 space-y-2 text-muted">
+                {site.currentRoles.map((role) => (
+                  <li key={`${role.title}-${role.organization}`}>
+                    <span className="text-stone-900">{role.title}</span>
+                    {", "}
+                    {role.organization}
+                  </li>
+                ))}
+              </ul>
             </article>
           </div>
         </Container>
@@ -128,20 +121,10 @@ export default function Home() {
                   <span>{publicationTypeLabels[pub.type]}</span>
                 </div>
                 <h3 className="font-display mt-2 text-lg leading-snug text-stone-900">
-                  {pub.href ? (
-                    <Link
-                      href={pub.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="hover:text-accent"
-                    >
-                      {pub.title}
-                    </Link>
-                  ) : (
-                    pub.title
-                  )}
+                  {pub.title}
                 </h3>
                 <AuthorList authors={pub.authors} />
+                <PublicationLinks links={pub.links} />
               </li>
             ))}
           </ul>

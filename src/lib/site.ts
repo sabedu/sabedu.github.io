@@ -13,30 +13,53 @@ export type Author = {
   self?: boolean;
 };
 
+export type PublicationLink = {
+  label: string;
+  href: string;
+};
+
 export type Publication = {
   title: string;
   authors: Author[];
   venue: string;
   year: number;
   type: "journal" | "conference" | "workshop" | "preprint" | "thesis";
-  href?: string;
+  links: PublicationLink[];
+};
+
+export type ProjectLink = {
+  label: string;
+  href: string;
 };
 
 export type Project = {
   title: string;
-  description: string;
-  href: string;
+  organization?: string;
   year?: number;
+  problem: string;
+  contribution: string;
+  outcome: string;
+  technologies: string[];
+  links: ProjectLink[];
+};
+
+export type Role = {
+  title: string;
+  organization: string;
+  period?: string;
 };
 
 export const site = {
   name: "Samuel Abedu",
   title: "Samuel Abedu",
   description:
-    "PhD student in Software Engineering at Concordia University. Research on LLMs, mining software repositories, and software engineering for AI systems.",
+    "PhD Candidate and software engineer building reliable AI systems for developers. Research on LLMs, mining software repositories, and software engineering for AI systems.",
   url: "https://sabedu.github.io",
-  tagline: "Software engineering research for reliable AI systems",
-  role: "PhD Researcher · Concordia University",
+  tagline:
+    "PhD Candidate and Software Engineer Building Reliable AI Systems for Developers",
+  lead:
+    "I research, develop and evaluate LLM-based systems that help developers understand, maintain and review software repositories.",
+  role: "PhD Candidate in Software Engineering · Concordia University",
   location: "Montreal, QC",
   lab: {
     name: "DAS Lab",
@@ -65,29 +88,49 @@ export const site = {
     { label: "ORCID", href: "https://orcid.org/0009-0000-0472-4514" },
     { label: "X", href: "https://x.com/s_abedu" },
   ] satisfies SocialLink[],
-  scholar: {
-    citations: 98,
-    hIndex: 5,
-    i10Index: 4,
-  },
   researchAreas: [
     "Empirical software engineering",
     "Mining software repositories",
     "Software engineering for AI systems",
-    "Explainable AI for software engineering",
+    "LLM-based developer tools",
   ],
   bio: {
     intro:
-      "I am a Software Engineering PhD student under Dr. Emad Shihab's supervision at Concordia University, working in the Data-driven Analysis of Software (DAS) Lab.",
+      "I am a PhD Candidate in Software Engineering at Concordia University, supervised by Dr. Emad Shihab in the Data-driven Analysis of Software (DAS) Lab.",
     education: [
-      "PhD in Software Engineering (ongoing), Concordia University",
+      "PhD Candidate in Software Engineering, Concordia University",
       "MPhil, University of Ghana",
       "BSc, University of Cape Coast",
     ],
     background:
-      "Before starting my PhD, I worked as a software engineer, involved in planning, designing, developing, and deploying software products.",
+      "Alongside my research, I build and deploy AI systems in industry. I have worked as a software engineer at Hubtel, contributed to an AI chatbot deployed with Sandoz in the pharmaceutical sector, and currently intern at the National Bank of Canada.",
   },
+  currentRoles: [
+    {
+      title: "PhD Candidate",
+      organization: "Concordia University",
+    },
+    {
+      title: "Intern",
+      organization: "National Bank of Canada",
+      period: "August 2026 – present",
+    },
+    {
+      title: "Program Committee Member",
+      organization: "MSR 2027",
+    },
+    {
+      title: "Reviewer",
+      organization: "Information and Software Technology",
+    },
+  ] satisfies Role[],
+  service: [
+    "Program Committee, Mining Software Repositories (MSR) 2026",
+    "Program Committee, Mining Software Repositories (MSR) 2027",
+    "Reviewer, Information and Software Technology (IST)",
+  ],
   awards: [
+    "MSR 2026 Distinguished Junior PC Reviewer Award",
     "Concordia University International Tuition Award of Excellence, 2022",
     "Concordia Conference and Exposition Allowance, 2024",
   ],
@@ -103,7 +146,21 @@ export const site = {
       venue: "ACM Transactions on Software Engineering and Methodology",
       year: 2026,
       type: "journal",
-      href: "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=xUIPO3gAAAAJ&citation_for_view=xUIPO3gAAAAJ:IjCSPb-OGe4C",
+      links: [
+        {
+          label: "Paper",
+          href: "https://das.encs.concordia.ca/pdf/abedu_TOSEM2026.pdf",
+        },
+        { label: "DOI", href: "https://doi.org/10.1145/3796510" },
+        {
+          label: "Code",
+          href: "https://github.com/sabedu/knowledge_graph_llm_synergy",
+        },
+        {
+          label: "Dataset",
+          href: "https://zenodo.org/records/14271490",
+        },
+      ],
     },
     {
       title:
@@ -118,7 +175,12 @@ export const site = {
         "Proceedings of the 2026 IEEE/ACM 7th International Workshop on Bots and Agents in Software Engineering (BoatSE)",
       year: 2026,
       type: "workshop",
-      href: "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=xUIPO3gAAAAJ&citation_for_view=xUIPO3gAAAAJ:eQOLeE2rZwMC",
+      links: [
+        {
+          label: "Paper",
+          href: "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=xUIPO3gAAAAJ&citation_for_view=xUIPO3gAAAAJ:eQOLeE2rZwMC",
+        },
+      ],
     },
     {
       title:
@@ -138,7 +200,13 @@ export const site = {
         "Proceedings of the 2026 IEEE/ACM 7th International Workshop on Bots and Agents in Software Engineering (BoatSE)",
       year: 2026,
       type: "workshop",
-      href: "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=xUIPO3gAAAAJ&citation_for_view=xUIPO3gAAAAJ:YsMSGLbcyi4C",
+      links: [
+        {
+          label: "Paper",
+          href: "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=xUIPO3gAAAAJ&citation_for_view=xUIPO3gAAAAJ:YsMSGLbcyi4C",
+        },
+        { label: "Demo", href: "https://thedrug.guru" },
+      ],
     },
     {
       title:
@@ -154,7 +222,10 @@ export const site = {
       venue: "arXiv preprint arXiv:2508.11034",
       year: 2025,
       type: "preprint",
-      href: "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=xUIPO3gAAAAJ&citation_for_view=xUIPO3gAAAAJ:W7OEmFMy1HYC",
+      links: [
+        { label: "Paper", href: "https://arxiv.org/pdf/2508.11034" },
+        { label: "DOI", href: "https://arxiv.org/abs/2508.11034" },
+      ],
     },
     {
       title:
@@ -169,7 +240,19 @@ export const site = {
         "Proceedings of the 2025 IEEE/ACM 22nd International Conference on Mining Software Repositories (MSR)",
       year: 2025,
       type: "conference",
-      href: "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=xUIPO3gAAAAJ&citation_for_view=xUIPO3gAAAAJ:Tyk-4Ss8FVUC",
+      links: [
+        {
+          label: "Paper",
+          href: "https://das.encs.concordia.ca/pdf/abedu2025repochat.pdf",
+        },
+        { label: "DOI", href: "https://doi.org/10.1109/MSR66628.2025.00126" },
+        { label: "Code", href: "https://github.com/sabedu/repositoryChat" },
+        {
+          label: "Dataset",
+          href: "https://zenodo.org/records/14673950",
+        },
+        { label: "Demo", href: "https://repochattool.streamlit.app/" },
+      ],
     },
     {
       title:
@@ -183,7 +266,13 @@ export const site = {
         "Proceedings of the 28th International Conference on Evaluation and Assessment in Software Engineering (EASE)",
       year: 2024,
       type: "conference",
-      href: "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=xUIPO3gAAAAJ&citation_for_view=xUIPO3gAAAAJ:9yKSN-GCB0IC",
+      links: [
+        {
+          label: "Paper",
+          href: "https://das.encs.concordia.ca/pdf/abedu2024llm.pdf",
+        },
+        { label: "DOI", href: "https://doi.org/10.1145/3661167.3661218" },
+      ],
     },
     {
       title: "An Exploratory Study on Machine Learning Model Management",
@@ -196,7 +285,13 @@ export const site = {
       venue: "ACM Transactions on Software Engineering and Methodology",
       year: 2024,
       type: "journal",
-      href: "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=xUIPO3gAAAAJ&citation_for_view=xUIPO3gAAAAJ:UeHWp8X0CEIC",
+      links: [
+        {
+          label: "Paper",
+          href: "https://seyviour.github.io/assets/pdf/jlatmodelmanagement.pdf",
+        },
+        { label: "DOI", href: "https://doi.org/10.1145/3688841" },
+      ],
     },
     {
       title:
@@ -209,7 +304,12 @@ export const site = {
       venue: "SN Computer Science",
       year: 2024,
       type: "journal",
-      href: "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=xUIPO3gAAAAJ&citation_for_view=xUIPO3gAAAAJ:zYLM7Y9cAGgC",
+      links: [
+        {
+          label: "Paper",
+          href: "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=xUIPO3gAAAAJ&citation_for_view=xUIPO3gAAAAJ:zYLM7Y9cAGgC",
+        },
+      ],
     },
     {
       title:
@@ -225,7 +325,12 @@ export const site = {
         "Proceedings of the International Conference on Software Engineering and Knowledge Engineering (SEKE)",
       year: 2023,
       type: "conference",
-      href: "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=xUIPO3gAAAAJ&citation_for_view=xUIPO3gAAAAJ:2osOgNQ5qMEC",
+      links: [
+        {
+          label: "Paper",
+          href: "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=xUIPO3gAAAAJ&citation_for_view=xUIPO3gAAAAJ:2osOgNQ5qMEC",
+        },
+      ],
     },
     {
       title: "DeepLaBB: A Deep Learning Framework for Blocking Bugs",
@@ -241,7 +346,12 @@ export const site = {
         "2021 International Conference on Cyber Security and Internet of Things (ICSIoT)",
       year: 2021,
       type: "conference",
-      href: "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=xUIPO3gAAAAJ&citation_for_view=xUIPO3gAAAAJ:d1gkVwhDpl0C",
+      links: [
+        {
+          label: "Paper",
+          href: "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=xUIPO3gAAAAJ&citation_for_view=xUIPO3gAAAAJ:d1gkVwhDpl0C",
+        },
+      ],
     },
     {
       title:
@@ -250,15 +360,59 @@ export const site = {
       venue: "MPhil Thesis, University of Ghana",
       year: 2021,
       type: "thesis",
+      links: [],
     },
   ] as Publication[],
   projects: [
     {
       title: "Drug Information Chatbot",
-      description:
-        "An AI-powered chatbot for drug and pharmaceutical information, built for real-world use in the pharmaceutical industry.",
-      href: "https://thedrug.guru",
+      organization: "Sandoz",
       year: 2025,
+      problem:
+        "Healthcare professionals and patients need fast, reliable access to drug and pharmaceutical information, but existing tools are often fragmented and difficult to use in practice.",
+      contribution:
+        "Led development of an AI-powered chatbot that answers drug-information questions for real users in the pharmaceutical industry, from design through deployment.",
+      outcome:
+        "Deployed a production chatbot used to support drug-information access, with experiences documented in a peer-reviewed industry case study.",
+      technologies: ["LLMs", "RAG", "Python", "Cloud deployment"],
+      links: [
+        { label: "Live demo", href: "https://thedrug.guru" },
+        {
+          label: "Paper",
+          href: "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=xUIPO3gAAAAJ&citation_for_view=xUIPO3gAAAAJ:YsMSGLbcyi4C",
+        },
+      ],
+    },
+    {
+      title: "RepoChat",
+      organization: "DAS Lab · Concordia University",
+      year: 2025,
+      problem:
+        "Developers and non-technical stakeholders struggle to extract insights from GitHub repositories because repository data is spread across commits, issues, files, and metadata.",
+      contribution:
+        "Built a web-based chatbot that synergizes LLMs with knowledge graphs to translate natural-language questions into graph queries and return repository answers.",
+      outcome:
+        "Achieved 90% accuracy on a user study of 40 repository-related questions and released an open-source tool and replication package.",
+      technologies: [
+        "Python",
+        "LangChain",
+        "Neo4j",
+        "GitHub GraphQL",
+        "Streamlit",
+      ],
+      links: [
+        { label: "Live demo", href: "https://repochattool.streamlit.app/" },
+        { label: "Code", href: "https://github.com/sabedu/repositoryChat" },
+        {
+          label: "Paper",
+          href: "https://das.encs.concordia.ca/pdf/abedu2025repochat.pdf",
+        },
+        { label: "DOI", href: "https://doi.org/10.1109/MSR66628.2025.00126" },
+        {
+          label: "Dataset",
+          href: "https://zenodo.org/records/14673950",
+        },
+      ],
     },
   ] as Project[],
   cvUrl: "/files/cv.pdf",
