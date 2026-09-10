@@ -1,13 +1,14 @@
 import type { Metadata } from "next";
 import { ProjectCard } from "@/components/project-card";
 import { Container } from "@/components/container";
-import { site } from "@/lib/site";
+import { getSite } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "Projects",
 };
 
 export default function ProjectsPage() {
+  const site = getSite();
   return (
     <Container className="py-16 sm:py-20">
       <p className="text-sm font-medium uppercase tracking-[0.2em] text-accent">

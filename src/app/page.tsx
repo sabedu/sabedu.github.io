@@ -3,9 +3,11 @@ import Link from "next/link";
 import { AuthorList } from "@/components/author-list";
 import { Container } from "@/components/container";
 import { PublicationLinks } from "@/components/publication-links";
-import { publicationTypeLabels, site } from "@/lib/site";
+import { getSite } from "@/lib/content";
+import { publicationTypeLabels } from "@/lib/site";
 
 export default function Home() {
+  const site = getSite();
   const featured = [...site.publications]
     .sort((a, b) => b.year - a.year)
     .slice(0, 4);
@@ -14,27 +16,26 @@ export default function Home() {
     <>
       <section className="border-b border-border bg-surface">
         <Container className="py-20 sm:py-28">
-          <div className="flex flex-col items-center gap-10 sm:flex-row sm:items-start sm:gap-12">
-            <Image
-              src={site.profileImage}
-              alt={site.name}
-              width={192}
-              height={192}
-              className="h-44 w-44 shrink-0 rounded-2xl border border-border object-cover object-top shadow-sm sm:h-48 sm:w-48"
-              priority
-            />
+          <div className="flex flex-col items-center gap-8 sm:flex-row sm:items-stretch sm:gap-10">
+            <div className="relative h-44 w-44 shrink-0 overflow-hidden rounded-2xl border border-border shadow-sm sm:h-auto sm:w-48">
+              <Image
+                src={site.profileImage}
+                alt={site.name}
+                fill
+                sizes="(max-width: 640px) 176px, 192px"
+                className="object-cover object-top"
+                priority
+              />
+            </div>
 
-            <div className="text-center sm:text-left">
-              <p className="mb-4 text-sm font-medium uppercase tracking-[0.2em] text-accent">
-                {site.role}
-              </p>
-              <h1 className="font-display max-w-2xl text-4xl leading-tight tracking-tight text-stone-900 sm:text-5xl sm:leading-[1.1]">
+            <div className="flex max-w-2xl flex-col justify-center text-center sm:text-left">
+              <h1 className="font-display text-3xl leading-tight tracking-tight text-stone-900 sm:text-4xl sm:leading-[1.15]">
                 {site.tagline}
               </h1>
-              <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted">
+              <p className="mt-4 text-lg leading-relaxed text-muted">
                 {site.lead}
               </p>
-              <div className="mt-10 flex flex-wrap justify-center gap-4 sm:justify-start">
+              <div className="mt-8 flex flex-wrap justify-center gap-4 sm:justify-start">
                 <Link
                   href="/about/"
                   className="inline-flex items-center rounded-full bg-accent px-5 py-2.5 text-sm font-medium text-white transition-colors hover:bg-[#7c2d12]"

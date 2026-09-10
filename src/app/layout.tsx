@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Fraunces, Source_Sans_3 } from "next/font/google";
 import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
+import { getSite } from "@/lib/content";
 import "./globals.css";
 
 const fraunces = Fraunces({
@@ -16,19 +17,21 @@ const sourceSans = Source_Sans_3({
   display: "swap",
 });
 
-export const metadata: Metadata = {
-  title: {
-    default: "Samuel Abedu",
-    template: "%s · Samuel Abedu",
-  },
-  description:
-    "PhD Candidate and software engineer building reliable AI systems for developers. Research on LLMs, mining software repositories, and software engineering for AI systems.",
-  metadataBase: new URL("https://sabedu.github.io"),
-  icons: {
-    icon: [{ url: "/icon.png", sizes: "32x32", type: "image/png" }],
-    apple: [{ url: "/apple-icon.png", sizes: "180x180", type: "image/png" }],
-  },
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const site = getSite();
+  return {
+    title: {
+      default: site.name,
+      template: `%s · ${site.name}`,
+    },
+    description: site.description,
+    metadataBase: new URL(site.url),
+    icons: {
+      icon: [{ url: "/icon.png", sizes: "32x32", type: "image/png" }],
+      apple: [{ url: "/apple-icon.png", sizes: "180x180", type: "image/png" }],
+    },
+  };
+}
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (

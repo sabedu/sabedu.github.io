@@ -2,13 +2,14 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { Container } from "@/components/container";
-import { site } from "@/lib/site";
+import { getSite } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "About",
 };
 
 export default function AboutPage() {
+  const site = getSite();
   return (
     <Container className="py-16 sm:py-20">
       <div className="flex flex-col gap-10 sm:flex-row sm:items-start">

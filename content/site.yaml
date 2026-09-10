@@ -1,0 +1,73 @@
+name: Samuel Abedu
+description: >-
+  PhD Candidate and software engineer building reliable AI systems for developers.
+  Research on LLMs, mining software repositories, and software engineering for AI systems.
+url: https://sabedu.github.io
+tagline: PhD Candidate and Software Engineer Building Reliable AI Systems for Developers
+lead: >-
+  I research, develop and evaluate LLM-based systems that help developers understand,
+  maintain and review software repositories.
+role: PhD Candidate in Software Engineering · Concordia University
+location: Montreal, QC
+email: samuel.abedu@mail.concordia.ca
+alternateEmail: s_abedu@encs.concordia.ca
+profileImage: /images/profile.png
+cvUrl: /files/cv.pdf
+
+lab:
+  name: DAS Lab
+  href: https://das.encs.concordia.ca/members/samuel-abedu
+
+social:
+  - label: Google Scholar
+    href: https://scholar.google.com/citations?user=xUIPO3gAAAAJ&hl=en
+  - label: GitHub
+    href: https://github.com/sabedu
+  - label: LinkedIn
+    href: https://www.linkedin.com/in/samuel-abedu/
+  - label: DAS Lab
+    href: https://das.encs.concordia.ca/members/samuel-abedu
+  - label: ORCID
+    href: https://orcid.org/0009-0000-0472-4514
+  - label: X
+    href: https://x.com/s_abedu
+
+researchAreas:
+  - Empirical software engineering
+  - Mining software repositories
+  - Software engineering for AI systems
+  - LLM-based developer tools
+
+bio:
+  intro: >-
+    I am a PhD Candidate in Software Engineering at Concordia University, supervised by
+    Dr. Emad Shihab in the Data-driven Analysis of Software (DAS) Lab.
+  background: >-
+    Alongside my research, I build and deploy AI systems in industry. I have worked as a
+    software engineer at Hubtel, contributed to an AI chatbot deployed with Sandoz in the
+    pharmaceutical sector, and currently intern at the National Bank of Canada.
+  education:
+    - PhD Candidate in Software Engineering, Concordia University
+    - MPhil, University of Ghana
+    - BSc, University of Cape Coast
+
+currentRoles:
+  - title: PhD Candidate
+    organization: Concordia University
+  - title: Intern
+    organization: National Bank of Canada
+    period: August 2026 – present
+  - title: Program Committee Member
+    organization: MSR 2027
+  - title: Reviewer
+    organization: Information and Software Technology
+
+service:
+  - Program Committee, Mining Software Repositories (MSR) 2026
+  - Program Committee, Mining Software Repositories (MSR) 2027
+  - Reviewer, Information and Software Technology (IST)
+
+awards:
+  - MSR 2026 Distinguished Junior PC Reviewer Award
+  - Concordia University International Tuition Award of Excellence, 2022
+  - Concordia Conference and Exposition Allowance, 2024
