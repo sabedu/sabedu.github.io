@@ -1,7 +1,9 @@
 import Link from "next/link";
-import { site } from "@/lib/site";
+import { getSite } from "@/lib/content";
 
-export function Header() {
+export async function Header() {
+  const site = getSite();
+
   return (
     <header className="border-b border-stone-200/80 bg-[#f7f5f2]/90 backdrop-blur-sm">
       <div className="mx-auto flex max-w-3xl items-center justify-between px-6 py-5">

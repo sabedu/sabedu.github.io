@@ -3,14 +3,15 @@ import { AuthorList } from "@/components/author-list";
 import { Container } from "@/components/container";
 import { PublicationLinks } from "@/components/publication-links";
 import { PublicationTypeBadge } from "@/components/publication-type-badge";
-import { site } from "@/lib/site";
+import { getSite } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "Publications",
 };
 
 export default function PublicationsPage() {
-  const publications = [...site.publications].sort((a, b) => b.year - a.year);
+  const site = getSite();
+  const publications = site.publications;
 
   return (
     <Container className="py-16 sm:py-20">

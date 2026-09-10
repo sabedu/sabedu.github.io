@@ -1,7 +1,9 @@
 import Link from "next/link";
-import { site } from "@/lib/site";
+import { getSite } from "@/lib/content";
 
-export function Footer() {
+export async function Footer() {
+  const site = getSite();
+
   return (
     <footer className="mt-auto border-t border-stone-200/80 bg-[#f7f5f2]">
       <div className="mx-auto flex max-w-3xl flex-col gap-4 px-6 py-10">
